@@ -1,0 +1,7 @@
+---
+homepage: https://dumbdata.co/
+documentation: https://github.com/Jude-Nwachukwu/gtm-bulk-cookie-setter-table
+versions:
+#INITIAL VERSION
+  - sha: 6517b8d21e122c9d2b7f23f1ba9051fe38ca26ca
+    changeNotes: Initial release.
