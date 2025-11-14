@@ -1,48 +1,90 @@
-# GTM Bulk Cookie Setter Tag Template
+# GTM Bulk Cookie Setter (Smart) Tag Template
 
 ## Overview
 
-This Google Tag Manager (GTM) custom tag template allows you to set multiple cookies dynamically based on a table of cookie names and their corresponding values. You can configure cookie expiration, path, and domain, with advanced options to skip undefined or empty values and to refresh cookie lifespan upon each tag execution.
+The **Bulk Cookie Setter (Smart)** Google Tag Manager (GTM) custom tag template enables you to dynamically set cookies in bulk or through an object configuration. You can configure cookie expiration, path, domain, and advanced rules such as skipping undefined or empty values, refreshing lifespan on each execution, and combining bulk and object-based cookie setups for maximum flexibility.
 
-Developed by Jude for DumbData.
-
-## Features
-
-- Set multiple cookies from a user-defined table of name-value pairs.
-- Configurable expiration periods (seconds, minutes, hours, days).
-- Customizable cookie domain and path.
-- Option to skip setting cookies when the value is undefined, null, or empty.
-- Option to refresh/update cookie lifespan on every tag execution.
-- Works within GTM’s sandboxed JavaScript environment.
-- Uses Apache 2.0 License.
-
-## How to Import
-
-1. Download the tag template file (`.tpl` or `.json`) from the repository.
-2. Open Google Tag Manager.
-3. Navigate to **Templates** > **Tag Templates**.
-4. Click **Import** and upload the downloaded template file.
-5. The template will now be available when you create a new tag.
-
-## How to Configure
-
-1. Add a new tag in GTM using the imported Cookie Setter tag template.
-2. Populate the **Cookie Name and Value Table** with the cookie names and their corresponding values you want to set.
-3. Set the cookie expiration unit and lifespan (e.g., minutes, hours).
-4. (Optional) Set the cookie domain and path or leave default (`auto` domain and `/` path).
-5. Enable **Skip setting cookies with undefined/null/empty values** to avoid storing invalid cookies.
-6. Enable **Update cookie lifespan on each execution** to refresh expiration on each tag fire.
-7. Save and publish your container.
-
-## License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-## About
-
-Developed With 😍 by **Jude Nwachukwu Onyejekwe** for **[DumbData](https://dumbdata.co/)**. For support or questions, open an issue in the GitHub repository.
+Developed by **Jude Nwachukwu Onyejekwe** for **[DumbData](https://dumbdata.co/)**.
 
 ---
 
-Thank you for using this tag template!  
-Please star the repo if you find it helpful.
+## Features
+
+- 🧩 **Flexible Cookie Setup Modes**
+  - **Bulk Only:** Set multiple cookies using a table of name-value pairs.  
+  - **Object Only:** Set cookies from an object where each key represents a cookie name and its value represents the cookie value.  
+  - **Bulk + Object:** Combine both methods for hybrid cookie creation.
+
+- ⚙️ **Advanced Cookie Handling**
+  - Automatically replaces spaces in object key names with underscores (`cookie value 1` → `cookie_value_1`).
+  - Option to add a **custom prefix** to cookie names when using the Object configuration mode.
+  - Configurable expiration duration and lifespan units (seconds, minutes, hours, days).
+  - Optional refresh/update of cookie lifespan on every tag execution.
+  - Optional skipping of undefined, null, or empty values to prevent invalid cookie entries.
+
+- 🌐 **Customization Options**
+  - Define a **custom domain** and **path** for cookies.
+  - Automatic fallback to default values (`auto` for domain and `/` for path).
+
+- 🔒 **Compliant & Safe**
+  - Fully compatible with GTM’s **sandboxed JavaScript** environment.
+  - Built with GTM Core APIs (`setCookie`, `getCookieValues`, `makeString`, `makeNumber`, `Object`, `getType`).
+  - Distributed under the **Apache 2.0 License**.
+
+---
+
+## How to Import
+
+1. Download the tag template file (`.tpl` or `.json`) from the repository.  
+2. In your GTM workspace, go to **Templates → Tag Templates**.  
+3. Click **Import** and upload the template file.  
+4. The **Bulk Cookie Setter (Smart)** template will now be available when creating a new tag.
+
+---
+
+## How to Configure
+
+1. **Add a new tag** in GTM using the imported **Bulk Cookie Setter (Smart)** template.  
+2. In the **Set Cookie Method** dropdown, choose how you want to set cookies:
+   - **Set Cookie with Bulk Only:** Uses the table configuration only.
+   - **Set Cookie with Object Only:** Uses the object configuration only.
+   - **Set Cookie with Bulk & Object:** Combines both methods.
+
+### 🧱 Bulk Configuration
+3. If using a bulk setup:
+   - Populate the **Cookie Name and Value Table** with the cookie names and corresponding values you wish to set.
+
+### 🧠 Object Configuration
+4. If using object-based cookies:
+   - Enter your object variable in **Cookie Object Variable** (e.g., `{{dlv - userData}}`).
+   - Optionally enable **Enable Cookie Name Prefix For Object Keys** to prepend a prefix to all object cookie names.
+   - If enabled, enter your prefix in **Enter The Cookie Name Prefix** (e.g., `user_`).
+
+### 🕓 Lifespan & Duration
+5. Choose the **Cookie Duration** unit and specify the **Cookie Lifespan** (e.g., 30 days).  
+6. Enable **Update cookie lifespan on each execution** to refresh expiration each time the tag fires.  
+7. Enable **Do not set cookie if value is undefined, null, or empty** to skip invalid entries.
+
+### 🌍 Advanced Configuration
+8. (Optional) Under **Advanced Configuration**, specify:
+   - A **custom domain** (e.g., `example.com`).
+   - A **custom path** (e.g., `/shop`).
+
+9. **Save** your tag, **test** it in Preview Mode, and **publish** your GTM container.
+
+---
+
+## License
+
+This project is licensed under the **Apache License 2.0** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## About
+
+Developed with ❤️ by **Jude Nwachukwu Onyejekwe** for **[DumbData](https://dumbdata.co/)**.  
+For feedback, issues, or contributions, open an issue in the GitHub repository.
+
+---
+
+⭐ **If you find this template useful, please star the repository and share it with the community!**
