@@ -3,9 +3,11 @@ homepage: https://dumbdata.co/
 documentation: https://github.com/Jude-Nwachukwu/gtm-bulk-cookie-setter-table
 versions:
 #LATEST VERSION
-  - sha: 833e7a617da6e9270e8b9fb4d8e6d6a7f3927cfd
-    changeNotes: added category info.
+  - sha: af11221fead287a8c6211a4c6100db6813fc5306
+    changeNotes: supports object to cookie.
 
 #INITIAL VERSION
+  - sha: 833e7a617da6e9270e8b9fb4d8e6d6a7f3927cfd
+    changeNotes: added category info.
   - sha: 6517b8d21e122c9d2b7f23f1ba9051fe38ca26ca
     changeNotes: Initial release.
